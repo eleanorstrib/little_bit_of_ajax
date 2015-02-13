@@ -38,9 +38,9 @@ def fortune():
 @app.route('/weather')
 def weather():
     """Return a weather-info dictionary for this zipcode."""
-
     zipcode = request.args.get('zipcode')
     return jsonify(WEATHER[zipcode])
+
 
 
 @app.route('/order-melons', methods=['POST'])
