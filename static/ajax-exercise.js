@@ -43,6 +43,11 @@ function orderMelons(evt) {
     $.post("/order-melons",
         $('#order-form').serialize(),
         function (result) {
+            $('#order-status').html(result.msg);
+            console.log(result.code);
+            if (result.code === "ERROR"){
+                $('#order-status').addClass('order-error');
+            }
             // TODO: show the result message after your form
             // TODO: if the result code is ERROR, make it show up in red (see our CSS!)
         }
